@@ -14,7 +14,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--sand);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-weight:400;line-height:1.65;}
-  .wrap{max-width:760px;margin:0 auto;padding:0 0 140px;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 0 50px;}
   .hero{width:100%;display:block;aspect-ratio:2/1;object-fit:cover;}
   .pad{padding:0 26px;}
   h1{font-family:'Forum',Georgia,serif;font-weight:400;color:var(--teal);font-size:2.5rem;line-height:1.08;margin:30px 0 14px;}
@@ -35,12 +35,9 @@
         font-family:'Forum',serif;font-size:1.15rem;border-radius:8px;cursor:pointer;transition:.15s;}
   .opt:hover{background:rgba(46,90,102,.08);}
   .opt.sel{background:var(--teal);color:var(--cream);border-color:var(--teal);}
-  .totalbar{position:fixed;left:0;right:0;bottom:0;background:var(--teal);color:var(--cream);z-index:10;
-    box-shadow:0 -6px 24px rgba(35,72,82,.25);}
-  .totalbar .inner{max-width:760px;margin:0 auto;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;}
-  .totalbar .lbl{font-family:'Forum',serif;font-size:1.15rem;}
-  .totalbar .num{font-family:'Forum',serif;font-size:2rem;color:var(--goldb);}
-  .totalbar .num small{font-size:1rem;color:var(--cream);opacity:.8;}
+  .totalcard{background:var(--teal);color:var(--cream);border-radius:8px;padding:22px 26px;margin:26px 0 6px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+  .totalcard .tc-lbl{font-family:'Forum',serif;font-size:1.35rem;}
+  .totalcard .tc-num{font-family:'Forum',serif;font-size:2.2rem;color:var(--goldb);white-space:nowrap;}
   .result{display:none;margin-top:30px;}
   .result.show{display:block;animation:fade .5s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
@@ -208,6 +205,12 @@
     </div>
     </div>
 
+    <div class="totalcard">
+      <div class="tc-lbl">Your total</div>
+      <div class="tc-num"><span id="totalNum">0</span> / 36</div>
+    </div>
+    <p class="hint">Answer all twelve and your result appears below.</p>
+
     <!-- RESULT -->
     <div class="result" id="result">
       <div class="eyebrow">What your number is showing you</div>
@@ -235,13 +238,6 @@
     </div>
 
     <footer>Abundance is your baseline</footer>
-  </div>
-</div>
-
-<div class="totalbar">
-  <div class="inner">
-    <div class="lbl">Your total</div>
-    <div><span class="num" id="totalNum">0</span><small> / 36</small></div>
   </div>
 </div>
 
